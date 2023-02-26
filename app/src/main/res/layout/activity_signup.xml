@@ -36,5 +36,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Sign Up"/>
+    <TextView
+        android:id="@+id/backtologin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Already have an Account?"
+        android:gravity="center_horizontal"
+        android:layout_below="@id/buttonSignup"
+        android:layout_marginTop="16dp"/>
 
 </LinearLayout>
