@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import androidx.preference.PreferenceManager
 import com.developercara.bcanotes.databinding.ActivityLoginBinding
 import com.google.firebase.auth.FirebaseAuth
 
@@ -17,6 +18,9 @@ class LoginActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         auth = FirebaseAuth.getInstance()
+
+
+
 
         binding.signupText.setOnClickListener {
             val intent = Intent(this, SignupActivity::class.java)
@@ -34,6 +38,8 @@ class LoginActivity : AppCompatActivity() {
                         if (task.isSuccessful) {
                             val user = auth.currentUser
                             if (user != null) {
+                                val prefs = PreferenceManager.getDefaultSharedPreferences(this)
+                                prefs.edit().putBoolean("is_logged_in", true).apply()
                                 val intent = Intent(this, MainActivity::class.java)
                                 intent.putExtra("user", user)
                                 startActivity(intent)

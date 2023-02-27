@@ -9,13 +9,14 @@ import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.developercara.bcanotes.MainActivity
-import com.developercara.bcanotes.sem1Activity
 import com.developercara.bcanotes.R
 import com.developercara.bcanotes.dataclass.Semes
+import com.developercara.bcanotes.sem1Activity
+import com.developercara.bcanotes.sem1subject.MathematicActivity
 import com.developercara.bcanotes.sem2Activity
 
-class SemesAdapter constructor(private val getActivity: MainActivity, private val semesList: List<Semes>):
-RecyclerView.Adapter<SemesAdapter.MyViewHolder>()
+class SemSubAdapter constructor(private val getActivity: sem1Activity, private val SemSubList: List<Semes>):
+    RecyclerView.Adapter<SemSubAdapter.MyViewHolder>()
 {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
@@ -24,11 +25,11 @@ RecyclerView.Adapter<SemesAdapter.MyViewHolder>()
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        holder.semsId.text = semesList[position].name
-        holder.semsImage.setImageResource(semesList[position].image)
+        holder.semsId.text = SemSubList[position].name
+        holder.semsImage.setImageResource(SemSubList[position].image)
         holder.cardView.setOnClickListener{
             val intent = when (position) {
-                0 -> Intent(getActivity, sem1Activity::class.java)
+                0 -> Intent(getActivity, MathematicActivity::class.java)
                 1 -> Intent(getActivity, sem2Activity::class.java)
 
                 // and so on for other positions
@@ -41,7 +42,7 @@ RecyclerView.Adapter<SemesAdapter.MyViewHolder>()
     }
 
     override fun getItemCount(): Int {
-        return semesList.size
+        return SemSubList.size
     }
     class MyViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
         val semsId: TextView = itemView.findViewById(R.id.semsId)

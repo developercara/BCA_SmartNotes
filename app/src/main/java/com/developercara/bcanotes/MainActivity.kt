@@ -1,7 +1,13 @@
 package com.developercara.bcanotes
 
+import android.content.Context
+import android.content.Intent
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.TextView
+import android.widget.Toast
+import androidx.preference.PreferenceManager
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -15,6 +21,8 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 
 class MainActivity : AppCompatActivity() {
+
+
     private lateinit var binding: ActivityMainBinding
     private lateinit var auth: FirebaseAuth
     private var recyclerView : RecyclerView?=null
@@ -24,7 +32,11 @@ class MainActivity : AppCompatActivity() {
     private var recyclerView2 : RecyclerView?=null
     private var otherList = mutableListOf<Others>()
     private var OthersAdapter: OthersAdapter?=null
+//are you sure toast
+    private var backPressedTime: Long = 0
+    private lateinit var backToast: Toast
 
+  // to get user name
 
     private lateinit var database: DatabaseReference
 
@@ -32,6 +44,44 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+// to prevent log out every time when user close app
+
+//  binding.logoutButton.setOnClickListener {
+//            auth.signOut()
+//            val intent = Intent(this, LoginActivity::class.java)
+//            startActivity(intent)
+//            finish()
+//        }
+        // Check if user is logged in
+        val prefs = PreferenceManager.getDefaultSharedPreferences(this)
+        val isLoggedIn = prefs.getBoolean("is_logged_in", false)
+        if (!isLoggedIn) {
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
+            finish()
+        } else {
+            // Getting user name to display on homepage
+            database = FirebaseDatabase.getInstance().reference
+            binding.text1
+
+            val user = FirebaseAuth.getInstance().currentUser
+            if (user != null) {
+                val userId = user.uid
+                val userRef = database.child("users").child(userId)
+
+                userRef.addListenerForSingleValueEvent(object : ValueEventListener {
+                    override fun onDataChange(dataSnapshot: DataSnapshot) {
+                        val name = dataSnapshot.child("name").getValue(String::class.java)
+                        binding.text1.text = "Welcome, $name!"
+                    }
+
+                    override fun onCancelled(databaseError: DatabaseError) {
+                        // handle error
+                    }
+                })
+            }
+        }
+
 //// SEMESTER GRID VIEW
         semesList =ArrayList()
         recyclerView = binding.recyclemain as RecyclerView
@@ -84,4 +134,16 @@ class MainActivity : AppCompatActivity() {
         SemesAdapter!!.notifyDataSetChanged()
 
     }
+    override fun onBackPressed() {
+        if (backPressedTime + 2000 > System.currentTimeMillis()) {
+            backToast.cancel()
+            super.onBackPressed()
+            return
+        } else {
+            backToast = Toast.makeText(this, "Press back again to exit", Toast.LENGTH_SHORT)
+            backToast.show()
+        }
+        backPressedTime = System.currentTimeMillis()
+}
+
 }
