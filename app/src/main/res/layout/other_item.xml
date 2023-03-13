@@ -13,18 +13,25 @@
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/other_image"
         android:layout_width="80dp"
-        android:layout_height="match_parent"
+        android:layout_height="70dp"
+        android:padding="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="5dp"
         android:adjustViewBounds="true"
         android:scaleType="centerCrop"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+
         app:shapeAppearanceOverlay="@style/RoundedCorner"/>
 
     <TextView
         android:id="@+id/other_title"
         android:layout_width="wrap_content"
         android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_margin="10dp"
         android:text="Quiz games"
+        android:fontFamily="@font/myappfont"
+        android:textColor="@color/darkblue"
         android:layout_height="wrap_content"
         android:textSize="20dp" />
 

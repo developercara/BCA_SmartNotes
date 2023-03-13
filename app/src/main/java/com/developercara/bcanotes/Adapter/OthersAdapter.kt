@@ -13,6 +13,7 @@ import com.developercara.bcanotes.MainActivity
 import com.developercara.bcanotes.R
 import com.developercara.bcanotes.dataclass.Others
 import com.developercara.bcanotes.dataclass.Semes
+import com.developercara.bcanotes.quizgame.QuizGame
 import com.developercara.bcanotes.sem1Activity
 import com.developercara.bcanotes.sem2Activity
 
@@ -35,7 +36,7 @@ class OthersAdapter constructor(private val getActivity: MainActivity, private v
         holder.other_image.setImageResource(otherList[position].image)
         holder.other_click.setOnClickListener{
             val intent = when (position) {
-                0 -> Intent(getActivity, sem1Activity::class.java)
+                0 -> Intent(getActivity, QuizGame::class.java)
                 1 -> Intent(getActivity, sem2Activity::class.java)
 
                 // and so on for other positions
