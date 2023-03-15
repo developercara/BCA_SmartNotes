@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".compiler.OnlineCompiler">
+
+        <Spinner
+            android:id="@+id/languageSpinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:entries="@array/languages"
+            android:prompt="@string/select_language_prompt"
+            />
+
+        <EditText
+            android:id="@+id/codeEditText"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginTop="25dp"
+            android:background="@android:color/white"
+            android:gravity="top"
+            android:hint="Enter your code here"
+            android:padding="8dp"
+            android:textColor="@android:color/black"
+            android:textColorHint="@android:color/darker_gray"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/inputLabelTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/codeEditText"
+            android:layout_marginTop="16dp"
+            android:text="Input:"
+            android:textColor="@android:color/black"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/inputEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/inputLabelTextView"
+            android:background="@android:color/white"
+            android:padding="8dp"
+            android:textColor="@android:color/black"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/compileButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/inputEditText"
+            android:layout_marginTop="16dp"
+            android:text="Compile"
+            android:textColor="@android:color/white"
+            android:background="@color/lightpink" />
+
+        <Button
+            android:id="@+id/runButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/inputEditText"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="16dp"
+            android:text="Run"
+            android:textColor="@android:color/white"
+            android:background="@color/lightpink" />
+
+        <TextView
+            android:id="@+id/outputLabelTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/compileButton"
+            android:layout_marginTop="16dp"
+            android:text="Output:"
+            android:textColor="@android:color/black"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/outputTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/outputLabelTextView"
+            android:background="@android:color/white"
+            android:padding="8dp"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            android:editable="false"
+            android:focusable="false"
+            android:cursorVisible="false" />
+
+
+
+
+
+</RelativeLayout>

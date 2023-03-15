@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "678605043233",
+    "firebase_url": "https://bca-notes-938bc-default-rtdb.firebaseio.com",
+    "project_id": "bca-notes-938bc",
+    "storage_bucket": "bca-notes-938bc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:678605043233:android:61acb99637450269259560",
+        "android_client_info": {
+          "package_name": "com.developercara.bcanotes"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "678605043233-614d6gh663io30jasgd3mv372tl0r1v7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.developercara.bcanotes",
+            "certificate_hash": "f52f99e9ed491e9a23671edcb812febc71dd7472"
+          }
+        },
+        {
+          "client_id": "678605043233-54ijnabkrrdspujiemau0hhargcg2c53.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB3rmmHuzIdeA0F6TQLU7ZmH3_ddIMLCbM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "678605043233-54ijnabkrrdspujiemau0hhargcg2c53.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

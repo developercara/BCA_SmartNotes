@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">BCA SmartNotes</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="open_nav">Open Navigation Drawer</string>
+    <string name="close_nav">Close Navigation Drawer</string>
+    //Headings
+    <string name="heading_one">Welcome to BCA SmartNotes</string>
+    <string name="heading_two">Ready to make Learning fun and easy?</string>
+    <string name="heading_three">Your ultimate study companion!</string>
+    <string name="heading_fourth">Let\'s dive in and start your journey!</string>
+
+    //Description
+    <string name="desc_one">Access all the required study materials in one place </string>
+    <string name="desc_two">BCA SmartNotes is here for you!</string>
+    <string name="desc_three">With features like syllabus notes, practical notes, quiz games,online compiler and get question papers and project files</string>
+    <string name="desc_fourth">Say goodbye to study stress and hello to academic success with BCA SmartsNotes!</string>
+
+
+    <string name="select_language_prompt">Select a language</string>
+    <string-array name="languages">
+        <item>Java</item>
+        <item>Python2</item>
+        <item>C</item>
+        <item>Cpp</item>
+        <item>JavaScript</item>
+    </string-array>
+
+
+</resources>
