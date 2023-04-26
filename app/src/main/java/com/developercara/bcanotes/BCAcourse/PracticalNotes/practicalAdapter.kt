@@ -8,9 +8,11 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
+import com.developercara.bcanotes.BCAcourse.PracticalNotes.CpPracActivity
 import com.developercara.bcanotes.R
 
 import com.developercara.bcanotes.dataclass.Semes
+import com.developercara.bcanotes.testing.testing
 
 
 class practicalAdapter constructor(private val getActivity: PracticalNotes, private val semesList: List<Semes>):
@@ -27,8 +29,8 @@ class practicalAdapter constructor(private val getActivity: PracticalNotes, priv
         holder.semsImage.setImageResource(semesList[position].image)
         holder.cardView.setOnClickListener{
             val intent = when (position) {
-                0 -> Intent(getActivity, cPrac::class.java)
-                1 -> Intent(getActivity, sem2Activity::class.java)
+                0 -> Intent(getActivity, CpPracActivity::class.java)
+                1 -> Intent(getActivity, testing::class.java)
 
                 // and so on for other positions
                 else -> null
