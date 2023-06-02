@@ -1,4 +1,4 @@
-package com.developercara.bcanotes.practicalnotes
+package com.developercara.bcanotes.BCAcourse.PracticalNotes
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -28,11 +28,13 @@ class PracticalNotes : AppCompatActivity() {
     }
 
     private  fun prepareSemesListData(){
-        var semseters =Semes("CP",R.drawable.sems1)
-        semesList.add(semseters)
-        semseters =Semes("CP II",R.drawable.sems2)
+        var semseters =Semes("C PROGRAMMING",R.drawable.sems1)
         semesList.add(semseters)
         semseters =Semes("C++",R.drawable.sems2)
+        semesList.add(semseters)
+        semseters =Semes("JAVA",R.drawable.sems6)
+        semesList.add(semseters)
+        semseters =Semes("PYTHON",R.drawable.sems6)
         semesList.add(semseters)
         semseters =Semes("WEB TECH",R.drawable.sems3)
         semesList.add(semseters)
@@ -42,8 +44,7 @@ class PracticalNotes : AppCompatActivity() {
         semesList.add(semseters)
         semseters =Semes("DBMS",R.drawable.sems6)
         semesList.add(semseters)
-        semseters =Semes("JAVA",R.drawable.sems6)
-        semesList.add(semseters)
+
 
         SemesAdapter!!.notifyDataSetChanged()
 

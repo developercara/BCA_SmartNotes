@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.developercara.bcanotes.MainActivity
 import com.developercara.bcanotes.R
 import com.developercara.bcanotes.dataclass.GetquestionDataClass
+import com.developercara.bcanotes.testing.testing
 
 class getQuestionAdapter constructor(private val getActivity: MainActivity, private val purchaseList: List<GetquestionDataClass>):
     RecyclerView.Adapter<getQuestionAdapter.MyViewHolder>()
@@ -26,7 +27,7 @@ class getQuestionAdapter constructor(private val getActivity: MainActivity, priv
         holder.semsImage.setImageResource(purchaseList[position].image)
         holder.cardView.setOnClickListener{
             val intent = when (position) {
-                0 -> Intent(getActivity, sem2Activity::class.java)
+                0 -> Intent(getActivity, testing::class.java)
 
 
                 // and so on for other positions

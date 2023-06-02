@@ -1,19 +1,17 @@
-package com.developercara.bcanotes.BCAcourse.PracticalNotes
+package com.developercara.bcanotes.BCAcourse.PracticalNotes.cprogramPractical
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.developercara.bcanotes.BCAcourse.sem2.cp2.Cp2Adapter
-import com.developercara.bcanotes.R
 import com.developercara.bcanotes.databinding.ActivityCpPracBinding
-import com.developercara.bcanotes.dataclass.Others
+import com.developercara.bcanotes.dataclass.Others2
 
 class CpPracActivity : AppCompatActivity() {
     lateinit var binding: ActivityCpPracBinding
     private lateinit var recyclerView: RecyclerView
     private lateinit var adapter: CpPratical
-    private val cList = mutableListOf<Others>()
+    private val cList = mutableListOf<Others2>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityCpPracBinding.inflate(layoutInflater)
@@ -27,11 +25,22 @@ class CpPracActivity : AppCompatActivity() {
     }
 
     private fun prepareSemesListData() {
-        cList.add(Others("Find a simple Interest lollllllllllllll  lllll  lllllllll  lllllllhjkdhserta lolllllllllllllllllllllllllllllllllllhjkdhserta", R.drawable.a))
-        cList.add(Others("Unit I", R.drawable.b))
-        cList.add(Others("Unit II", R.drawable.b))
-        cList.add(Others("Unit III", R.drawable.d))
-        cList.add(Others("Unit IV", R.drawable.d))
+        cList.add(Others2("FIND SIMPLE INTEREST "))
+        cList.add(Others2("FIND HIGHEST OF THREE NUMBERS"))
+        cList.add(Others2("PRINT RIGHT TRIANGLE STAR PATTERN"))
+        cList.add(Others2("PRINT REVERSE RIGHT TRIANGLE STAR PATTERN"))
+        cList.add(Others2("PRINT STAR PYRAMID"))
+        cList.add(Others2("CREATE MENU DRIVEN FOR FACTORIAL,EVEN OR ODD AND PRIME NUMBER"))
+        cList.add(Others2("FIND A GRADE OF A STUDENT"))
+        cList.add(Others2("SWAP TWO NUMBERS WITHOUT USING THIRD VARIABLE"))
+        cList.add(Others2("CREATE A CALCULATOR"))
+        cList.add(Others2("CALCULATE GCD AND LCM OF GIVEN TWO NUMBERS"))
+        cList.add(Others2("FIBONACCI SERIES"))
+        cList.add(Others2("PRINT PRIME NUMBERS BETWEEN M AND N"))
+        cList.add(Others2("REVERSE A GIVEN INTEGER NUMBER AND  CHECKS WHETHER THE NUMBER IN PALIDROME OR NOT"))
+        cList.add(Others2("CREATE A SQUARE STAR PATTERN"))
+        cList.add(Others2("PRINT HALLOW SQUARE STAR PATTERN"))
+        cList.add(Others2("PRINT HALLOW SQUARE STAR PATTERN"))
         adapter.notifyDataSetChanged()
     }
 }
